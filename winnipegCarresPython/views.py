@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Community, Volunteer, User, HelpType, HelpCategory, Offer, Request
+from .forms import VolunteerForm
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the Winnipeg Carres REST API index.")
@@ -59,6 +61,18 @@ def volunteer_list(request):
 
 def volunteer_details(request, community_id):
     return HttpResponse(f"Details of volunteer {community_id}")
+
+def volunteer_registration(request):
+    if request.method == "POST":
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            print(form.cleaned_data)  # For debugging purposes
+            return render(request, 'success.html', {'form': form})
+    else:
+        form = VolunteerForm()
+
+    return render(request, 'volunteer_registration.html', {'form': form})
 
 
 def user_list(request):
