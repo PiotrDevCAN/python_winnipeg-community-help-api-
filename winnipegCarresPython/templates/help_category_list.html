@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for HelpCategory in HelpCategories %}
+            {% for helpCategory in helpCategories %}
                 <tr>
-                    <td>{{ HelpCategory.id }}</td>
-                    <td>{{ HelpCategory.name }}</td>
-                    <td>{{ HelpCategory.email }}</td>
-                    <td>{{ HelpCategory.phone }}</td>
+                    <td>{{ helpCategory.id }}</td>
+                    <td>{{ helpCategory.name }}</td>
+                    <td>{{ helpCategory.email }}</td>
+                    <td>{{ helpCategory.phone }}</td>
                     <!-- Add other fields from the Help Category model -->
                 </tr>
             {% endfor %}

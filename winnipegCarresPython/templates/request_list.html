@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for Request in Requests %}
+            {% for request in requests %}
                 <tr>
-                    <td>{{ Request.id }}</td>
-                    <td>{{ Request.name }}</td>
-                    <td>{{ Request.email }}</td>
-                    <td>{{ Request.phone }}</td>
+                    <td>{{ request.id }}</td>
+                    <td>{{ request.name }}</td>
+                    <td>{{ request.email }}</td>
+                    <td>{{ request.phone }}</td>
                     <!-- Add other fields from the Request model -->
                 </tr>
             {% endfor %}

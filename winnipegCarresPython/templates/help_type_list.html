@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for HelpType in HelpTypes %}
+            {% for helpType in helpTypes %}
                 <tr>
-                    <td>{{ HelpType.id }}</td>
-                    <td>{{ HelpType.name }}</td>
-                    <td>{{ HelpType.email }}</td>
-                    <td>{{ HelpType.phone }}</td>
+                    <td>{{ helpType.id }}</td>
+                    <td>{{ helpType.name }}</td>
+                    <td>{{ helpType.email }}</td>
+                    <td>{{ helpType.phone }}</td>
                     <!-- Add other fields from the Help Type model -->
                 </tr>
             {% endfor %}

@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for Offer in Offers %}
+            {% for offer in offers %}
                 <tr>
-                    <td>{{ Offer.id }}</td>
-                    <td>{{ Offer.name }}</td>
-                    <td>{{ Offer.email }}</td>
-                    <td>{{ Offer.phone }}</td>
+                    <td>{{ offer.id }}</td>
+                    <td>{{ offer.name }}</td>
+                    <td>{{ offer.email }}</td>
+                    <td>{{ offer.phone }}</td>
                     <!-- Add other fields from the Offer model -->
                 </tr>
             {% endfor %}

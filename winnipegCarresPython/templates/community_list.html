@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
+    <title>Community List</title>
 </head>
 <body>
-    <h1>User List</h1>
+    <h1>Community List</h1>
 
     <table>
         <thead>
@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for user in users %}
+            {% for community in communities %}
                 <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.phone }}</td>
+                    <td>{{ community.id }}</td>
+                    <td>{{ community.name }}</td>
+                    <td>{{ community.description }}</td>
+                    <td>{{ community.created_at }}</td>
                     <!-- Add other fields from the User model -->
                 </tr>
             {% endfor %}
