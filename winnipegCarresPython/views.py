@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Community, Volunteer, User, HelpOffer, HelpType, HelpCategory 
 
 def index(request):
     return HttpResponse("Hello, world. You're at the Winnipeg Carres REST API index.")
@@ -34,7 +36,8 @@ def help_category_details(request, community_id):
     return HttpResponse(f"Details of help category {community_id}")
 
 def volunteer_list(request):
-    return HttpResponse(f"Volunteers list")
+    volunteers = Volunteer.objects.all()
+    return render(request, 'volunteer_list.html', {'volunteers': volunteers})
 
 def volunteer_details(request, community_id):
     return HttpResponse(f"Details of volunteer {community_id}")
