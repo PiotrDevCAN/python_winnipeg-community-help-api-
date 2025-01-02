@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <!-- Add other fields from the User model -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for User in Users %}
+                <tr>
+                    <td>{{ User.id }}</td>
+                    <td>{{ User.name }}</td>
+                    <td>{{ User.email }}</td>
+                    <td>{{ User.phone }}</td>
+                    <!-- Add other fields from the User model -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

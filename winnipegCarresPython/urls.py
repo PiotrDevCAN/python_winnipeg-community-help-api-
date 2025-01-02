@@ -40,4 +40,6 @@ urlpatterns = [
     path('api/volunteer/list/', views.volunteer_list, name='volunteer_list'),
     path('api/volunteer/<int:community_id>/', views.volunteer_details, name='volunteer_details'),  # Dynamic URL with community_id
 
+    path('api/user/list/', views.user_list, name='user_list'),
+    path('api/user/<int:community_id>/', views.user_details, name='user_details'),  # Dynamic URL with community_id
 ]

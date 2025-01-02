@@ -31,8 +31,20 @@ class Volunteer(models.Model):
     def __str__(self):
         return f'{self.user.full_name} - {self.community.name}'
 
-# HelpOffer Model
-class HelpOffer(models.Model):
+# Offer Model
+class Offer(models.Model):
+    volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    help_type = models.ForeignKey('HelpType', on_delete=models.CASCADE)
+    help_category = models.ForeignKey('HelpCategory', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+    
+# Request Model
+class Request(models.Model):
     volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()

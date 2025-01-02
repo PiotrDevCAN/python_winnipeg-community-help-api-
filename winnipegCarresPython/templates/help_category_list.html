@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Category List</title>
+</head>
+<body>
+    <h1>Help Category List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <!-- Add other fields from the Help Category model -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for HelpCategory in HelpCategories %}
+                <tr>
+                    <td>{{ HelpCategory.id }}</td>
+                    <td>{{ HelpCategory.name }}</td>
+                    <td>{{ HelpCategory.email }}</td>
+                    <td>{{ HelpCategory.phone }}</td>
+                    <!-- Add other fields from the Help Category model -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

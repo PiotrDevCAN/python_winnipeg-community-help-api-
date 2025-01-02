@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request List</title>
+</head>
+<body>
+    <h1>Request List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <!-- Add other fields from the Request model -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for Request in Requests %}
+                <tr>
+                    <td>{{ Request.id }}</td>
+                    <td>{{ Request.name }}</td>
+                    <td>{{ Request.email }}</td>
+                    <td>{{ Request.phone }}</td>
+                    <!-- Add other fields from the Request model -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

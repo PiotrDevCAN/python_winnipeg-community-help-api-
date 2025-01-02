@@ -1,39 +1,57 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Community, Volunteer, User, HelpOffer, HelpType, HelpCategory 
+from .models import Community, Volunteer, User, HelpType, HelpCategory, Offer, Request
 
 def index(request):
     return HttpResponse("Hello, world. You're at the Winnipeg Carres REST API index.")
 
 def community_list(request):
-    return HttpResponse(f"Communities list")
+    communities = Community.objects.all()
+    return render(request, 'community_list.html', {'communities': communities})
 
 def community_details(request, community_id):
     return HttpResponse(f"Details of community {community_id}")
 
+
 def request_list(request):
-    return HttpResponse(f"Requests list")
+    requests = Request.objects.all()
+    return render(request, 'request_list.html', {'requests': requests})
 
 def request_details(request, community_id):
     return HttpResponse(f"Details of request {community_id}")
 
+
 def offer_list(request):
-    return HttpResponse(f"Offers list")
+    offers = Offer.objects.all()
+    return render(request, 'offer_list.html', {'offers': offers})
 
 def offer_details(request, community_id):
     return HttpResponse(f"Details of offer {community_id}")
 
+
+def request_list(request):
+    requests = Request.objects.all()
+    return render(request, 'request_list.html', {'requests': requests})
+
+def request_details(request, community_id):
+    return HttpResponse(f"Details of request {community_id}")
+
+
 def help_type_list(request):
-    return HttpResponse(f"Help types list")
+    helpTypes = HelpType.objects.all()
+    return render(request, 'help_type_list.html', {'helpTypes': helpTypes})
 
 def help_type_details(request, community_id):
     return HttpResponse(f"Details of help type {community_id}")
 
+
 def help_category_list(request):
-    return HttpResponse(f"Help categories list")
+    helpCategories = HelpCategory.objects.all()
+    return render(request, 'help_category_list.html', {'helpCategories': helpCategories})
 
 def help_category_details(request, community_id):
     return HttpResponse(f"Details of help category {community_id}")
+
 
 def volunteer_list(request):
     volunteers = Volunteer.objects.all()
@@ -41,3 +59,11 @@ def volunteer_list(request):
 
 def volunteer_details(request, community_id):
     return HttpResponse(f"Details of volunteer {community_id}")
+
+
+def user_list(request):
+    users = User.objects.all()
+    return render(request, 'user_list.html', {'users': users})
+
+def user_details(request, community_id):
+    return HttpResponse(f"Details of user {community_id}")
