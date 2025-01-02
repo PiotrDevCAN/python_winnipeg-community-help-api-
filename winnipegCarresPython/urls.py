@@ -21,4 +21,23 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
+
+    path('api/community/list/', views.community_list, name='community_list'),
+    path('api/community/<int:community_id>/', views.community_details, name='community_details'),  # Dynamic URL with community_id
+
+    path('api/request/list/', views.request_list, name='request_list'),
+    path('api/request/<int:community_id>/', views.request_details, name='request_details'),  # Dynamic URL with community_id
+
+    path('api/offer/list/', views.offer_list, name='offer_list'),
+    path('api/offer/<int:community_id>/', views.offer_details, name='offer_details'),  # Dynamic URL with community_id
+
+    path('api/help-type/list/', views.help_type_list, name='help_type_list'),
+    path('api/help-type/<int:community_id>/', views.help_type_details, name='help_type_details'),  # Dynamic URL with community_id
+
+    path('api/help-category/list/', views.help_category_list, name='help_category_list'),
+    path('api/help-category/<int:community_id>/', views.help_category_details, name='help_category_details'),  # Dynamic URL with community_id
+
+    path('api/volunteer/list/', views.volunteer_list, name='volunteer_list'),
+    path('api/volunteer/<int:community_id>/', views.volunteer_details, name='volunteer_details'),  # Dynamic URL with community_id
+
 ]
